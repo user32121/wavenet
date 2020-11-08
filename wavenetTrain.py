@@ -43,4 +43,4 @@ model.compile("adam", loss="sparse_categorical_crossentropy", metrics=["accuracy
 checkpointPrefix = os.path.join(wavenet.checkpointDir,"ckpt")
 checkpoint_callBack = tf.keras.callbacks.ModelCheckpoint(filepath=checkpointPrefix, save_weights_only=True) #checkpoint path
 
-history = model.fit(dataset, epochs=wavenet.EPOCHS, steps_per_epoch=32, callbacks=[checkpoint_callBack, wavenet.PrintWeightChange(model)])    #train the model
+history = model.fit(dataset, epochs=wavenet.EPOCHS, callbacks=[checkpoint_callBack, wavenet.PrintWeightChange(model)])    #train the model
