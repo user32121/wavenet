@@ -28,7 +28,7 @@ for i in range(0, len(stream) - seqLength - 1, 1000):
 sequences = tf.data.Dataset.from_tensor_slices(data)  #(None)
 # sequences = charDataset.batch(seqLength+1, True)  #(None, seqLength+1)
 dataset = sequences.map(lambda chunk : (chunk[:-1], chunk[-1]))  #(None, Tuple<Tensor,int>)
-dataset = dataset.batch(wavenet.BATCHSIZE, drop_remainder = True).cache()  #(None, BATCHSIZE, Tuple<Tensor,int>)
+dataset = dataset.batch(wavenet.BATCHSIZE).cache()  #(None, BATCHSIZE, Tuple<Tensor,int>)
 
 print("aaaaaaaaa\n\n\n")
 
