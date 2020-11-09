@@ -44,7 +44,7 @@ for i in range(NUMSTOGENERATE):
     stream[-1] = value
 
     if(time.time()-t0 > 5):
-        print("progress: ",i/NUMSTOGENERATE,", value: ",numsGenerated[-1])
+        print("progress: ",i/NUMSTOGENERATE,", value: ",value)
         t0 = time.time()
 numsGenerated.extend(stream)
 
